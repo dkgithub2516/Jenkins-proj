@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your code from version control system (e.g., Git)
-                git 'https://github.com/yourusername/calculator-project.git'
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'dkgithub2516', url: 'https://github.com/dkgithub2516/Jenkins-proj.git']])
             }
         }
         stage('Install dependencies') {
